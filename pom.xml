@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    
+    <packaging>jar</packaging>
+    <groupId>org.webjars</groupId>
+    <artifactId>angular-dragdrop</artifactId>
+    <version>0876e2799a-SNAPSHOT</version>
+    <name>Angular-DragDrop</name>
+    <description>WebJar for Angular-DragDrop</description>
+    <url>http://webjars.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <upstream.version>0876e2799a</upstream.version>
+        <upstream.commit>0876e2799a52a699a8cadc7144ff36e8bec3589b</upstream.commit>
+        <upstream.url>https://github.com/ganarajpr/angular-dragdrop</upstream.url>
+        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>dcendents</id>
+            <name>Daniel Beland</name>
+            <email>dcendents@gmail.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://raw.githubusercontent.com/ganarajpr/angular-dragdrop/${upstream.version}/License.md</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/ganarajpr/angular-dragdrop</url>
+        <connection>scm:git:https://github.com/ganarajpr/angular-dragdrop.git</connection>
+        <developerConnection>scm:git:https://github.com/ganarajpr/angular-dragdrop.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>angularjs</artifactId>
+            <version>1.2.23</version>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals><goal>run</goal></goals>
+                        <configuration>
+                            <target>
+								<mkdir dir="${destDir}" />
+								<get src="https://raw.githubusercontent.com/ganarajpr/angular-dragdrop/${upstream.version}/draganddrop.js" dest="${destDir}" />
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.2</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>sonatype-nexus-staging</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
