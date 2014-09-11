@@ -11,15 +11,14 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angular-dragdrop</artifactId>
-    <version>0876e2799a-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <name>Angular-DragDrop</name>
     <description>WebJar for Angular-DragDrop</description>
     <url>http://webjars.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>0876e2799a</upstream.version>
-        <upstream.commit>0876e2799a52a699a8cadc7144ff36e8bec3589b</upstream.commit>
+        <upstream.version>1.0.3</upstream.version>
         <upstream.url>https://github.com/ganarajpr/angular-dragdrop</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
@@ -41,9 +40,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/ganarajpr/angular-dragdrop</url>
-        <connection>scm:git:https://github.com/ganarajpr/angular-dragdrop.git</connection>
-        <developerConnection>scm:git:https://github.com/ganarajpr/angular-dragdrop.git</developerConnection>
+        <url>https://github.com/webjars/angular-dragdrop</url>
+        <connection>scm:git:https://github.com/webjars/angular-dragdrop.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/angular-dragdrop.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
     
