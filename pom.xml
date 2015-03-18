@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angular-dragdrop</artifactId>
-    <version>1.0.8-SNAPSHOT</version>
+    <version>1.0.8</version>
     <name>Angular-DragDrop</name>
     <description>WebJar for Angular-DragDrop</description>
     <url>http://webjars.org</url>
@@ -53,7 +53,7 @@
         <url>https://github.com/webjars/angular-dragdrop</url>
         <connection>scm:git:https://github.com/webjars/angular-dragdrop.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/angular-dragdrop.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>angular-dragdrop-1.0.8</tag>
     </scm>
     
     <dependencies>
@@ -76,8 +76,8 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-								<mkdir dir="${destDir}"/>
-								<get src="https://raw.githubusercontent.com/angular-dragdrop/angular-dragdrop/v${upstream.version}/draganddrop.js" dest="${destDir}"/>
+								<mkdir dir="${destDir}" />
+								<get src="https://raw.githubusercontent.com/angular-dragdrop/angular-dragdrop/v${upstream.version}/draganddrop.js" dest="${destDir}" />
                             </target>
                         </configuration>
                     </execution>
